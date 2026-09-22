@@ -1,0 +1,117 @@
+=== Starting server at 2026-09-22T07:29:20.579326+00:00 ===
+Command: /config/Desktop/Session1/simple-agent/.venv/bin/adk api_server --host 127.0.0.1 --port 18080 --reload_agents --no-reload .
+CWD: /config/Desktop/Session1/simple-agent
+=== Started server process 978626 ===
+2026-09-22 07:29:24,333 - INFO - service_factory.py:266 - Using in-memory memory service
+2026-09-22 07:29:24,333 - INFO - local_storage.py:88 - Using per-agent session storage rooted at /config/Desktop/Session1/simple-agent
+2026-09-22 07:29:24,333 - INFO - local_storage.py:120 - Using per-agent artifact storage rooted at /config/Desktop/Session1/simple-agent
+/config/Desktop/Session1/simple-agent/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:553: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/Session1/simple-agent/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [978626]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50004 - "GET / HTTP/1.1" 404 Not Found
+2026-09-22 07:29:24,819 - INFO - local_storage.py:64 - Creating local session service at /config/Desktop/Session1/simple-agent/app/.adk/session.db
+2026-09-22 07:29:24,874 - INFO - api_server.py:860 - New session created: 4c25691c-7e5b-42d7-a66c-da0b95d9dc02
+INFO:     127.0.0.1:50008 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+2026-09-22 07:29:24,879 - INFO - envs.py:83 - Loaded .env file for app at /config/Desktop/Session1/simple-agent/.env
+2026-09-22 07:29:24,880 - INFO - envs.py:83 - Loaded .env file for app at /config/Desktop/Session1/simple-agent/.env
+INFO:     127.0.0.1:50012 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/Session1/simple-agent/.venv/lib/python3.13/site-packages/google/adk/tools/function_tool.py:95: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  build_function_declaration(
+2026-09-22 07:29:25,073 - INFO - google_llm.py:210 - Sending out request, model: gemini-flash-latest, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-09-22 07:29:25,931 - INFO - google_llm.py:279 - Response received from the model.
+2026-09-22 07:29:25,961 - INFO - google_llm.py:210 - Sending out request, model: gemini-flash-latest, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-09-22 07:29:26,857 - INFO - google_llm.py:279 - Response received from the model.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-09-22 07:29:26,998 - INFO - runners.py:2115 - Closing runner...
+2026-09-22 07:29:26,998 - INFO - runners.py:2128 - Runner closed.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [978626]
+=== Starting server at 2026-09-22T07:29:29.182108+00:00 ===
+Command: /config/Desktop/Session1/simple-agent/.venv/bin/adk api_server --host 127.0.0.1 --port 18080 --reload_agents --no-reload .
+CWD: /config/Desktop/Session1/simple-agent
+=== Started server process 978676 ===
+2026-09-22 07:29:30,853 - INFO - service_factory.py:266 - Using in-memory memory service
+2026-09-22 07:29:30,853 - INFO - local_storage.py:88 - Using per-agent session storage rooted at /config/Desktop/Session1/simple-agent
+2026-09-22 07:29:30,853 - INFO - local_storage.py:120 - Using per-agent artifact storage rooted at /config/Desktop/Session1/simple-agent
+/config/Desktop/Session1/simple-agent/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:553: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/Session1/simple-agent/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [978676]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:37652 - "GET / HTTP/1.1" 404 Not Found
+2026-09-22 07:29:31,307 - INFO - local_storage.py:64 - Creating local session service at /config/Desktop/Session1/simple-agent/app/.adk/session.db
+2026-09-22 07:29:31,319 - INFO - api_server.py:860 - New session created: 5ad3e012-816d-443b-8b0d-d9fecb625993
+INFO:     127.0.0.1:37668 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+2026-09-22 07:29:31,324 - INFO - envs.py:83 - Loaded .env file for app at /config/Desktop/Session1/simple-agent/.env
+2026-09-22 07:29:31,325 - INFO - envs.py:83 - Loaded .env file for app at /config/Desktop/Session1/simple-agent/.env
+INFO:     127.0.0.1:37670 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/Session1/simple-agent/.venv/lib/python3.13/site-packages/google/adk/tools/function_tool.py:95: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  build_function_declaration(
+2026-09-22 07:29:31,408 - INFO - google_llm.py:210 - Sending out request, model: gemini-flash-latest, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-09-22 07:29:32,258 - INFO - google_llm.py:279 - Response received from the model.
+2026-09-22 07:29:32,287 - INFO - google_llm.py:210 - Sending out request, model: gemini-flash-latest, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+2026-09-22 07:29:33,099 - INFO - google_llm.py:279 - Response received from the model.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-09-22 07:29:33,241 - INFO - runners.py:2115 - Closing runner...
+2026-09-22 07:29:33,241 - INFO - runners.py:2128 - Runner closed.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [978676]
+=== Starting server at 2026-09-22T07:50:45.169902+00:00 ===
+Command: /config/Desktop/Session1/reelreads-ai/.venv/bin/adk api_server --host 127.0.0.1 --port 18080 --reload_agents --no-reload .
+CWD: /config/Desktop/Session1/reelreads-ai
+=== Starting server at 2026-09-22T07:50:52.014081+00:00 ===
+Command: /config/Desktop/Session1/reelreads-ai/.venv/bin/adk api_server --host 127.0.0.1 --port 18080 --reload_agents --no-reload .
+CWD: /config/Desktop/Session1/reelreads-ai
+=== Started server process 983944 ===
+2026-09-22 07:50:55,405 - INFO - service_factory.py:266 - Using in-memory memory service
+2026-09-22 07:50:55,406 - INFO - local_storage.py:88 - Using per-agent session storage rooted at /config/Desktop/Session1/reelreads-ai
+2026-09-22 07:50:55,406 - INFO - local_storage.py:120 - Using per-agent artifact storage rooted at /config/Desktop/Session1/reelreads-ai
+/config/Desktop/Session1/reelreads-ai/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:553: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/Session1/reelreads-ai/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [983944]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58798 - "GET / HTTP/1.1" 404 Not Found
+2026-09-22 07:50:55,950 - INFO - local_storage.py:64 - Creating local session service at /config/Desktop/Session1/reelreads-ai/app/.adk/session.db
+2026-09-22 07:50:55,974 - INFO - api_server.py:860 - New session created: 642718cf-527d-41dd-89bf-18b358563f29
+INFO:     127.0.0.1:58812 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+2026-09-22 07:50:55,979 - INFO - envs.py:83 - Loaded .env file for app at /config/Desktop/Session1/reelreads-ai/.env
+2026-09-22 07:50:55,980 - INFO - envs.py:83 - Loaded .env file for app at /config/Desktop/Session1/reelreads-ai/.env
+2026-09-22 07:50:55,986 - WARNING - runners.py:395 - App name mismatch detected. The runner is configured with app name "reelreads_app", but the root agent was loaded from "/config/Desktop/Session1/reelreads-ai/app", which implies app name "app".
+INFO:     127.0.0.1:58828 - "POST /run_sse HTTP/1.1" 200 OK
+2026-09-22 07:50:56,017 - INFO - local_storage.py:64 - Creating local session service at /config/Desktop/Session1/reelreads-ai/reelreads_app/.adk/session.db
+2026-09-22 07:50:56,044 - ERROR - api_server.py:1601 - Error in event_generator: Session not found: 642718cf-527d-41dd-89bf-18b358563f29. The runner is configured with app name "reelreads_app", but the root agent was loaded from "/config/Desktop/Session1/reelreads-ai/app", which implies app name "app". Ensure the runner app_name matches that directory or pass app_name explicitly when constructing the runner. The mismatch prevents the runner from locating the session. To automatically create a session when missing, set auto_create_session=True when constructing the runner.
+Traceback (most recent call last):
+  File "/config/Desktop/Session1/reelreads-ai/.venv/lib/python3.13/site-packages/google/adk/cli/api_server.py", line 1573, in event_generator
+    async for event in agen:
+    ...<25 lines>...
+        yield f"data: {sse_event}\n\n"
+  File "/config/Desktop/Session1/reelreads-ai/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 983, in run_async
+    session = await self._get_or_create_session(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        user_id=user_id, session_id=session_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/config/Desktop/Session1/reelreads-ai/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 861, in _get_or_create_session
+    raise SessionNotFoundError(message)
+google.adk.errors.session_not_found_error.SessionNotFoundError: Session not found: 642718cf-527d-41dd-89bf-18b358563f29. The runner is configured with app name "reelreads_app", but the root agent was loaded from "/config/Desktop/Session1/reelreads-ai/app", which implies app name "app". Ensure the runner app_name matches that directory or pass app_name explicitly when constructing the runner. The mismatch prevents the runner from locating the session. To automatically create a session when missing, set auto_create_session=True when constructing the runner.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-09-22 07:50:56,225 - INFO - runners.py:2115 - Closing runner...
+2026-09-22 07:50:56,225 - INFO - runners.py:2128 - Runner closed.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [983944]
