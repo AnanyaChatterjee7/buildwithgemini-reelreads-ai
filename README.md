@@ -4,7 +4,7 @@
 
 
 ### Check video recording of the working demo
-reelreads_demo.webm file in the root location , download the file and play.
+reelreads_demo.webm and agent_demo.webm files in the root location , download the files and play.
 
 
 It combines real-time book discovery, grounded RAG Q&A, custom AI cover art generation, and personalized reading progress tracking into a sleek dark-mode web application.
