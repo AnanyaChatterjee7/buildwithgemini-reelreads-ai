@@ -2,6 +2,11 @@
 
 **ReelReads AI Agent** is an autonomous, agent-first book concierge and literary analysis application powered by Google Agent Development Kit (**ADK**) and **Gemini**.
 
+
+### Check video recording of the working demo
+reelreads_demo.webm file in the root location , download the file and play.
+
+
 It combines real-time book discovery, grounded RAG Q&A, custom AI cover art generation, and personalized reading progress tracking into a sleek dark-mode web application.
 
 ![ReelReads AI Agent Demo](demo.gif)
@@ -87,3 +92,4 @@ gcloud run deploy reelreads-ai-frontend \
   --region us-east1 \
   --allow-unauthenticated
 ```
+
