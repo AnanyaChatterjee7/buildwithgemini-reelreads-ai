@@ -29,6 +29,8 @@ from app.tools import (
     calculate_reading_stats,
 )
 
+from google.genai import types
+
 load_dotenv()
 setup_telemetry()
 setup_agent_engine_telemetry()
@@ -103,8 +105,40 @@ class ChatRequest(BaseModel):
 
 @app.post("/api/chat")
 async def api_chat(req: ChatRequest):
+    runner: Runner = getattr(app.state, "runner", None)
+    if runner:
+        try:
+            sessions = await runner.session_service.list_sessions(app_name=app.state.agent_app_name, user_id="web_user")
+            sessions_list = getattr(sessions, "sessions", sessions) if hasattr(sessions, "sessions") else sessions
+            if isinstance(sessions_list, list) and len(sessions_list) > 0:
+                session_id = sessions_list[0].id
+            else:
+                session = await runner.session_service.create_session(app_name=app.state.agent_app_name, user_id="web_user")
+                session_id = session.id
+
+            user_msg = types.Content(
+                role="user",
+                parts=[types.Part.from_text(text=req.message)]
+            )
+
+            response_text = ""
+            async for event in runner.run_async(user_id="web_user", session_id=session_id, new_message=user_msg):
+                if hasattr(event, "content") and event.content and event.content.parts:
+                    for p in event.content.parts:
+                        if p.text:
+                            response_text += p.text
+
+            if response_text:
+                return {"response": response_text}
+        except Exception as e:
+            import traceback
+            print(f"ADK RUNNER ERROR: {e}")
+            traceback.print_exc()
+            if logger:
+                logger.log_text(f"Error calling ADK Gemini LLM: {e}")
+
+    # Fallback if runner fails
     msg = req.message.lower()
-    
     if "recommend" in msg or "search" in msg:
         query = msg.replace("recommend", "").replace("search", "").strip() or "sci-fi"
         res = search_books_openlibrary(query)
@@ -127,14 +161,7 @@ async def api_chat(req: ChatRequest):
         if themes:
             text += f"<br/><b>Key Themes:</b> {themes}"
         return {"response": text, "data": res}
-    elif "add" in msg or "shelf" in msg or "reading list" in msg or "update" in msg:
-        if "dune" in msg:
-            res = manage_reading_list(action="add", title="Dune", author="Frank Herbert", status="currently_reading", current_page=240, total_pages=533)
-        else:
-            res = manage_reading_list(action="get_list")
-        return {"response": f"📚 <b>Reading List Agent</b>: {res.get('message', 'Updated your reading shelf successfully.')}", "data": res}
     else:
-        # Default agent concierge reply
         res = search_books_openlibrary("best science fiction")
         return {
             "response": f"🤖 <b>ReelReads AI Agent</b> scanned the literary database for '{req.message}'. Would you like Book Concierge Agent to recommend books, Literary Research Agent to analyze themes, or Cover Creation Agent to render cover art?",

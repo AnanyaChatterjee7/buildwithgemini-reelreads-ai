@@ -49,7 +49,7 @@ Style Guidelines:
 root_agent = Agent(
     name="root_agent",
     model=Gemini(
-        model="gemini-flash-latest",
+        model="gemini-2.5-flash",
         retry_options=types.HttpRetryOptions(attempts=3),
     ),
     instruction=SYSTEM_INSTRUCTION,
