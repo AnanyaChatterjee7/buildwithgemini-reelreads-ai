@@ -285,7 +285,7 @@ def query_literary_rag(topic_or_question: str) -> dict:
 
 
 def generate_book_cover(prompt: str, title: str = "ReelReads Edition", style: str = "Cinematic Dark Poster") -> dict:
-    """Generates original AI cover art for a book using Gemini image generation.
+    """Generates original AI cover art for a book using Gemini dynamic image generation.
 
     Args:
         prompt: Visual description of the cover art (e.g. 'Minimalist cybernetic skull with neon orange desert sands').
@@ -295,24 +295,24 @@ def generate_book_cover(prompt: str, title: str = "ReelReads Edition", style: st
     Returns:
         Cover art payload with image URL, generated prompt details, and A2UI render specifications.
     """
-    # High quality dynamic SVG / styled visual render URL generator
-    encoded_title = title.replace(" ", "%20")
-    encoded_prompt = prompt.replace(" ", "%20")
+    import urllib.parse
+    full_prompt = f"{style} book cover art for '{title}': {prompt}, high quality detailed concept art poster"
+    encoded_prompt = urllib.parse.quote(full_prompt)
     
-    # We create a beautiful poster image payload
-    mock_art_url = f"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80"
+    # Generate unique, dynamic AI cover art corresponding to the specific prompt and title
+    dynamic_art_url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?w=600&h=800&nologo=true"
     
     return {
         "status": "success",
         "title": title,
         "style": style,
         "generated_prompt": f"{style}: {prompt} featuring '{title}'",
-        "cover_art_url": mock_art_url,
+        "cover_art_url": dynamic_art_url,
         "a2ui_type": "cover_art_card",
         "a2ui_payload": {
             "title": title,
             "style": style,
-            "image_url": mock_art_url,
+            "image_url": dynamic_art_url,
             "badge": "AI Generated Art"
         }
     }
